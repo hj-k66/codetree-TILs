@@ -7,6 +7,7 @@ public class Main {
     static int[][] grid;
     static int n;
     static int m;
+    static int answer = 0;
 
     public static boolean inRange(int x, int y){
         return 0 <= x && x < n && 0 <= y && y < m;
@@ -18,7 +19,7 @@ public class Main {
         return true;
     }
 
-    public static int dfs(int x, int y){
+    public static void dfs(int x, int y){
         int[] dx = new int[]{1,0};
         int[] dy = new int[]{0,1};
 
@@ -27,13 +28,12 @@ public class Main {
             int newY = y + dy[i];
             if(canGo(newX, newY)){
                 if(newX == n-1 && newY == m-1){
-                    return 1;
+                    answer =  1;
                 }
                 visited[newX][newY] = 1;
                 dfs(newX, newY);
             }
         }
-        return 0;
     }
 
     public static void main(String[] args) throws IOException{
@@ -51,6 +51,7 @@ public class Main {
         }
 
         visited[0][0] = 1;
-        System.out.println(dfs(0,0));
+        dfs(0,0);
+        System.out.println(answer);
     }
 }
