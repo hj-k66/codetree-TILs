@@ -19,9 +19,9 @@ public class Main {
     }
     
     static void dfs(int x, int y){
-        int[] dx = new int[]{1, 0, -1, 0};
-        int[] dy = new int[]{0, 1, 0, -1};
-        for(int i = 0; i < 4; i++){
+        int[] dx = new int[]{0,1, 0, -1, 0};
+        int[] dy = new int[]{0,0, 1, 0, -1};
+        for(int i = 0; i < 5; i++){
             int newX = x + dx[i];
             int newY = y + dy[i];
             if(canGo(newX, newY)){
