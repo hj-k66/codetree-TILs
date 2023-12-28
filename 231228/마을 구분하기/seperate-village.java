@@ -49,9 +49,12 @@ public class Main {
         for(int i = 0; i < n; i++){
             for(int j = 0; j < n; j++){
                 count = 0;
+                if(grid[i][j] == 0 || visited[i][j]== 1) continue;
                 dfs(i,j);
-                if(count != 0)
+                if(count != 0){
                     town.add(count);
+                }
+                    
             }
         }
         //출력
