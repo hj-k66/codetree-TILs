@@ -40,7 +40,7 @@ public class Main {
         n = Integer.parseInt(st.nextToken());
         m = Integer.parseInt(st.nextToken());
         grid = new int[n][m];
-        visited = new int[n][m];
+        
         for(int i = 0; i < n; i++){
             st = new StringTokenizer(br.readLine());
             for(int j = 0; j < m; j++){
@@ -60,6 +60,7 @@ public class Main {
         int answerK = 1;
         for(int k = maxK; k >= 1; k--){
             int area = 0;
+            visited = new int[n][m];
             for(int i = 0; i < n; i++){
                 for(int j = 0; j < m; j++){
                     if(canGo(i,j,k)){
