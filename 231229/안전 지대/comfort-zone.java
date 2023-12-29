@@ -69,7 +69,7 @@ public class Main {
                     }
                 }
             }
-            if(maxArea < area){
+            if(maxArea <= area){
                 maxArea = area;
                 answerK = k;
             }
