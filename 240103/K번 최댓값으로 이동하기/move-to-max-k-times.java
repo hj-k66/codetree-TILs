@@ -57,7 +57,7 @@ public class Main {
             int currX = curr.x;
             int currY = curr.y;
 
-            for(int i = 0; i < n; i++){
+            for(int i = 0; i < 4; i++){
                 int newX = currX + dx[i];
                 int newY = currY + dy[i];
                 if(canGo(newX, newY) && grid[x][y] > grid[newX][newY]){
