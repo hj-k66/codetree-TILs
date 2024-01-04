@@ -66,6 +66,10 @@ public class Main {
 
         push(0,0,0);
         bfs();
-        System.out.println(step[n-1][m-1]);
+        int answer = step[n-1][m-1];
+        if(step[n-1][m-1] == 0){
+            answer = -1;
+        }
+        System.out.println(answer);
     }
 }
