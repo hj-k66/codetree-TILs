@@ -57,7 +57,8 @@ public class Main {
         bfs(r1, c1);
         if(knight[r2][c2] == 0){
             System.out.println(-1);
+        }else{
+            System.out.println(knight[r2][c2]);
         }
-        System.out.println(knight[r2][c2]);
     }
 }
