@@ -20,7 +20,7 @@ public class Main {
         return 0 <= x && x < n && 0 <= y && y < n;
     }
 
-    static void bfs(int r1, int c1){
+    static int bfs(int r1, int c1, int r2, int c2){
         int[] dx = new int[]{-1, -2, -2, -1, 1, 2, 2, 1};
         int[] dy = new int[]{-2, -1, 1, 2, 2, 1, -1, -2};
         q.add(new Pair(r1, c1));
@@ -37,9 +37,13 @@ public class Main {
                     knight[newX][newY] = knight[x][y] + 1;
                     visited[newX][newY] = true;
                     q.add(new Pair(newX, newY));
+                    if(newX == r2 && newY == c2){
+                        return knight[newX][newY];
+                    }
                 }
             }
         }
+        return -1;
         
 
     }
@@ -52,13 +56,13 @@ public class Main {
         int c1 = Integer.parseInt(st.nextToken()) - 1;
         int r2 = Integer.parseInt(st.nextToken()) - 1;
         int c2 = Integer.parseInt(st.nextToken()) - 1;
+        if(n == 1) {
+            System.out.println(0);
+            return;
+        }
         visited = new boolean[n][n];
         knight = new int[n][n];
-        bfs(r1, c1);
-        if(knight[r2][c2] == 0){
-            System.out.println(-1);
-        }else{
-            System.out.println(knight[r2][c2]);
-        }
+        int answer = bfs(r1, c1, r2, c2);
+        System.out.println(answer);
     }
 }
