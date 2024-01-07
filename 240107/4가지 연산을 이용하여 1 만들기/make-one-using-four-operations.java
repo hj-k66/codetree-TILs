@@ -10,7 +10,7 @@ public class Main {
         q.add(n);
         while(!q.isEmpty()){
             int curr = q.poll();
-            if(curr < 1) break;
+            if(curr <= 1) break;
             if(curr % 3 == 0){
                 if(step[curr / 3] == 0){
                     q.add(curr / 3);    
